@@ -18,7 +18,7 @@
 
     <style name="MyEditTextTheme">
         <item name="colorControlNormal">#fff</item>
-        <item name="colorControlActivated">#00ff00</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/accent_material_light</item>
     </style>
 
