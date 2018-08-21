@@ -7,6 +7,8 @@ public class Tarefa implements Serializable {
     private String nomeTarefa;
     private String descricaoTarefa;
     private String statusTarefa;
+    private Long id;
+
 
     public Tarefa(String nomeTarefa, String descricaoTarefa, String statusTarefa) {
         this.nomeTarefa = nomeTarefa;
@@ -15,6 +17,14 @@ public class Tarefa implements Serializable {
     }
 
     public Tarefa() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNomeTarefa() {
