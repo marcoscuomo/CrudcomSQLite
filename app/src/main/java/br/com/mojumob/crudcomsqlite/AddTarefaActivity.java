@@ -9,12 +9,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import br.com.mojumob.crudcomsqlite.helper.Common;
+import br.com.mojumob.crudcomsqlite.model.Tarefa;
+
 public class AddTarefaActivity extends AppCompatActivity {
 
     //Atributos
     private EditText edtNomeTarefa, edtDescricaoTarefa;
     private Button btnAcao;
     private Spinner spinnerStatus;
+    private Tarefa tarefaAtual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,29 @@ public class AddTarefaActivity extends AppCompatActivity {
         btnAcao            = findViewById(R.id.addTarefa_btnAcao);
 
         configuraSpinner();
+
+        //Pegando a Tarefa vindo da MainActivuty
+        tarefaAtual = (Tarefa) getIntent().getSerializableExtra(Common.INTENT_TAREFA_SELECIONADA);
+
+
+        //Preenchendo as caixas de textos caso sejam uma atualização
+        if(tarefaAtual != null){
+
+            //Configurando a posicição do spinner
+            int indiceSpinner;
+            if(tarefaAtual.getStatusTarefa().equals(Common.A_FAZER)){
+                indiceSpinner = Common.A_FAZER_POSITION;
+            }else if(tarefaAtual.getStatusTarefa().equals(Common.FAZENDO)){
+                indiceSpinner = Common.FAZENDO_POSITION;
+            }else{
+                indiceSpinner = Common.FEITO_POSITION;
+            }
+
+
+            edtNomeTarefa.setText(tarefaAtual.getNomeTarefa());
+            edtDescricaoTarefa.setText(tarefaAtual.getDescricaoTarefa());
+            spinnerStatus.setSelection(indiceSpinner);
+        }
 
 
         btnAcao.setOnClickListener(new View.OnClickListener() {

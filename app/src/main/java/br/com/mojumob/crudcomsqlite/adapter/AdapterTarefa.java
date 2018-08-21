@@ -1,6 +1,5 @@
 package br.com.mojumob.crudcomsqlite.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -45,7 +44,7 @@ public class AdapterTarefa extends RecyclerView.Adapter<AdapterTarefa.MyViewHold
         holder.txtStatus.setText(status);
         //holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorFeito));
 
-        if(status.equals(Common.A_FAER)){
+        if(status.equals(Common.A_FAZER)){
             holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorAFazer));
         }else if(status.equals(Common.FAZENDO)){
             holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorFazendo));
