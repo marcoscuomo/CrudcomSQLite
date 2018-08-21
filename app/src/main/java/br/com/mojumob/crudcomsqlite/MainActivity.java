@@ -8,15 +8,19 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
+
 import java.util.ArrayList;
 import java.util.List;
 import br.com.mojumob.crudcomsqlite.adapter.AdapterTarefa;
+import br.com.mojumob.crudcomsqlite.helper.Common;
+import br.com.mojumob.crudcomsqlite.helper.RecyclerItemClickListener;
 import br.com.mojumob.crudcomsqlite.model.Tarefa;
 
 public class MainActivity extends AppCompatActivity {
 
     //Atributos
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewTarefas;
     private FloatingActionButton fab;
     private List<Tarefa> listaTarefas = new ArrayList<>();
     private AdapterTarefa adapter;
@@ -27,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Inicializações
-        recyclerView = findViewById(R.id.recyclerViewTarefas);
+        recyclerViewTarefas = findViewById(R.id.recyclerViewTarefas);
         fab          = findViewById(R.id.fab);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -55,6 +59,31 @@ public class MainActivity extends AppCompatActivity {
         configuraRecyclerView();
 
         //Configurando evento de clique no Recycler View
+        recyclerViewTarefas.addOnItemTouchListener(new RecyclerItemClickListener(
+                MainActivity.this, recyclerViewTarefas,
+                new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        //Atualizar uma tarefa
+                        Tarefa tarefaSelecioanda = listaTarefas.get(position);
+                        Intent intent = new Intent(MainActivity.this, AddTarefaActivity.class);
+                        intent.putExtra(Common.INTENT_TAREFA_SELECIONADA, tarefaSelecioanda);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+
+                        //Excluir um atarefa
+
+                    }
+
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    }
+                }
+        ));
 
 
 
@@ -67,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Configurações gerais do RecyclerView
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        recyclerViewTarefas.setLayoutManager(layoutManager);
+        recyclerViewTarefas.setHasFixedSize(true);
+        recyclerViewTarefas.setAdapter(adapter);
     }
 
 

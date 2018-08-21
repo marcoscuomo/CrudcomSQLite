@@ -1,6 +1,8 @@
 package br.com.mojumob.crudcomsqlite.model;
 
-public class Tarefa {
+import java.io.Serializable;
+
+public class Tarefa implements Serializable {
 
     private String nomeTarefa;
     private String descricaoTarefa;
