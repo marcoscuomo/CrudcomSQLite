@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.List;
 import br.com.mojumob.crudcomsqlite.R;
+import br.com.mojumob.crudcomsqlite.helper.Common;
 import br.com.mojumob.crudcomsqlite.model.Tarefa;
 
 public class AdapterTarefa extends RecyclerView.Adapter<AdapterTarefa.MyViewHolder> {
@@ -44,9 +45,9 @@ public class AdapterTarefa extends RecyclerView.Adapter<AdapterTarefa.MyViewHold
         holder.txtStatus.setText(status);
         //holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorFeito));
 
-        if(status == context.getString(R.string.a_fazer)){
+        if(status.equals(Common.A_FAER)){
             holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorAFazer));
-        }else if(status == context.getString(R.string.fazendo)){
+        }else if(status.equals(Common.FAZENDO)){
             holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorFazendo));
         }else{
             holder.txtStatus.setTextColor(ContextCompat.getColor(context, R.color.colorFeito));

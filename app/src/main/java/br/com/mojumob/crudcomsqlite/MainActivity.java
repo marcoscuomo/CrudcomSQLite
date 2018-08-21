@@ -8,10 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.mojumob.crudcomsqlite.adapter.AdapterTarefa;
 import br.com.mojumob.crudcomsqlite.model.Tarefa;
 
@@ -54,8 +52,16 @@ public class MainActivity extends AppCompatActivity {
         listaTarefas.add(tarefa3);
 
 
-        //Configurando o RecyclerView
+        configuraRecyclerView();
 
+        //Configurando evento de clique no Recycler View
+
+
+
+    }
+
+    private void configuraRecyclerView() {
+        /*Configurando o RecyclerView*/
         //Adapter
         adapter = new AdapterTarefa(MainActivity.this, listaTarefas);
 
