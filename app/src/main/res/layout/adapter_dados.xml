@@ -21,7 +21,6 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Fazer compras"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -35,7 +34,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
-            android:text="A fazer"
             android:textColor="@color/colorAFazer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
