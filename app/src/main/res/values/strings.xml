@@ -8,6 +8,7 @@
     <string name="a_fazer">A fazer</string>
     <string name="fazendo">Fazendo</string>
     <string name="concluido">Concluido</string>
+    <string name="btn_atualizar">Atualizar</string>
     <string-array name="status">
         <item>A fazer</item>
         <item>Fazendo</item>
