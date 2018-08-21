@@ -2,9 +2,13 @@ package br.com.mojumob.crudcomsqlite.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.mojumob.crudcomsqlite.helper.Common;
 import br.com.mojumob.crudcomsqlite.model.Tarefa;
@@ -51,6 +55,32 @@ public class TarefaDAO {
 
 
         return true;
+    }
+
+    public List<Tarefa> listar(){
+
+        List<Tarefa> listaTarefas = new ArrayList<>();
+
+        String sql = Common.QUERY_SQL_SELECT_ALL;
+        Cursor c = le.rawQuery(sql, null);
+
+        while(c.moveToNext()){
+
+            Tarefa tarefa = new Tarefa();
+
+            Long idTarefa          = c.getLong(c.getColumnIndex(Common.CAMPO_ID));
+            String nomeTarefa      = c.getString(c.getColumnIndex(Common.CAMPO_NOME_TAREFA));
+            String descricaoTarefa = c.getString(c.getColumnIndex(Common.CAMPO_DESCRICAO_TAREFA));
+            String statusTarefa    = c.getString(c.getColumnIndex(Common.CAMPO_STATUS_TAREFA));
+
+            tarefa.setId(idTarefa);
+            tarefa.setNomeTarefa(nomeTarefa);
+            tarefa.setDescricaoTarefa(descricaoTarefa);
+            tarefa.setStatusTarefa(statusTarefa);
+        }
+
+
+        return listaTarefas;
     }
 
     @NonNull
