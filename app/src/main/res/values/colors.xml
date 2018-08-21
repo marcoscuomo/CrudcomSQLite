@@ -3,4 +3,10 @@
     <color name="colorPrimary">#dd2c00</color>
     <color name="colorPrimaryDark">#a30000</color>
     <color name="colorAccent">#ff6434</color>
+
+    <color name="colorAFazer">#651fff</color>
+    <color name="colorFazendo">#0100ca</color>
+    <color name="colorFeito">#a255ff</color>
+
+
 </resources>
