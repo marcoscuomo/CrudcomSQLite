@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#a30000</color>
     <color name="colorAccent">#ff6434</color>
 
-    <color name="colorAFazer">#651fff</color>
-    <color name="colorFazendo">#0100ca</color>
-    <color name="colorFeito">#a255ff</color>
+    <color name="colorAFazer">#ff1fda</color>
+    <color name="colorFazendo">#6b8366</color>
+    <color name="colorFeito">#ffb355</color>
 
 
 </resources>

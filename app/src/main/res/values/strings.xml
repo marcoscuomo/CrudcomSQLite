@@ -5,4 +5,7 @@
     <string name="nome_tarefa">Nome da tarefa</string>
     <string name="descricao_tarefa">Descrição da tarefa</string>
     <string name="btn_adicionar">Adicionar</string>
+    <string name="a_fazer">A fazer</string>
+    <string name="fazendo">Fazendo</string>
+    <string name="concluido">Concluido</string>
 </resources>
