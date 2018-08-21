@@ -6,10 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.mojumob.crudcomsqlite.helper.Common;
 import br.com.mojumob.crudcomsqlite.model.Tarefa;
 
@@ -27,11 +25,14 @@ public class TarefaDAO {
 
     public boolean salvar(Tarefa tarefa){
 
-        ContentValues cv = getContentValues(tarefa);
+        ContentValues cv = new ContentValues();
+        cv.put("tarefa", tarefa.getNomeTarefa());
+        cv.put("descricao", tarefa.getDescricaoTarefa());
+        cv.put("status", tarefa.getStatusTarefa());
 
 
         try{
-            escreve.insert(Common.TABELA_CONTATO, null, cv);
+            escreve.insert(Common.TABELA_TAREFA, null, cv);
             Log.i("INSERT", "salvado com sucesso: " + tarefa.getNomeTarefa());
         }catch (Exception e){
             Log.i("INSERT", "salvado com ERRO: " + tarefa.getNomeTarefa());
@@ -42,11 +43,14 @@ public class TarefaDAO {
 
     public boolean atualizar(Tarefa tarefa){
 
-        ContentValues cv = getContentValues(tarefa);
+        ContentValues cv = new ContentValues();
+        cv.put("tarefa", tarefa.getNomeTarefa());
+        cv.put("descricao", tarefa.getDescricaoTarefa());
+        cv.put("status", tarefa.getStatusTarefa());
 
         try{
             String[] args = {tarefa.getId().toString()};
-            escreve.update(Common.TABELA_CONTATO, cv, "id=?", args);
+            escreve.update(Common.TABELA_TAREFA, cv, "id=?", args);
             Log.i("BD Update", "Sucesso");
         }catch (Exception e){
             Log.i("BD Update", "Erro");
@@ -77,6 +81,8 @@ public class TarefaDAO {
             tarefa.setNomeTarefa(nomeTarefa);
             tarefa.setDescricaoTarefa(descricaoTarefa);
             tarefa.setStatusTarefa(statusTarefa);
+
+            listaTarefas.add(tarefa);
         }
 
 
@@ -92,5 +98,7 @@ public class TarefaDAO {
         cv.put(Common.PUT_STATUS_TAREFA, tarefa.getStatusTarefa());
         return cv;
     }
+
+
 
 }

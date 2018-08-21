@@ -11,7 +11,7 @@ public class Common {
     public static String INTENT_TAREFA_SELECIONADA = "intent tarefa selecionada";
     public static int VERSION_BD = 1;
     public static String NOME_BD = "bdcontato";
-    public static String TABELA_CONTATO = "tabela_contato";
+    public static String TABELA_TAREFA = "tabela_tarefa";
     public static String CAMPO_ID = "id";
     public static String CAMPO_NOME_TAREFA = "tarefa";
     public static String CAMPO_DESCRICAO_TAREFA = "descricao";
@@ -19,7 +19,7 @@ public class Common {
     public static String PUT_NOME_TAREFA = "nomeTarefa";
     public static String PUT_DESCRICAO_TAREFA = "descricaoTarefa";
     public static String PUT_STATUS_TAREFA = "statusTarefa";
-    public static String QUERY_SQL_SELECT_ALL = "SELECT * FROM " + TABELA_CONTATO + " ;";
+    public static String QUERY_SQL_SELECT_ALL = "SELECT * FROM " + TABELA_TAREFA + " ;";
     public static String CAMPOS_BD = "(" + CAMPO_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
             CAMPO_NOME_TAREFA +" TEXT NOT NULL, "+ CAMPO_DESCRICAO_TAREFA +" TEXT, "+
             CAMPO_STATUS_TAREFA +" TEXT); ";

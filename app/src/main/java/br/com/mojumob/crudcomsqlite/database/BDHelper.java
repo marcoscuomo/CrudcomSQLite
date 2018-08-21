@@ -18,11 +18,11 @@ public class BDHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         //Query de criacao da tabela de contatos
-        String sql = "CREATE TABLE IF NOT EXISTS " + Common.TABELA_CONTATO + Common.CAMPOS_BD;
+        String sql = "CREATE TABLE IF NOT EXISTS " + Common.TABELA_TAREFA + Common.CAMPOS_BD;
 
         try{
             db.execSQL(sql);
-            Log.i("INFO DB", "Tabela " + Common.TABELA_CONTATO + " criada com sucesso!");
+            Log.i("INFO DB", "Tabela " + Common.TABELA_TAREFA + " criada com sucesso!");
         }catch (Exception e){
             Log.i("INFO DB", "Erro ao criar a tabela");
         }
