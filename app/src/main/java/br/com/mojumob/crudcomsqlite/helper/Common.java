@@ -13,4 +13,7 @@ public class Common {
     public static String NOME_BD = "bdcontato";
     public static String TABELA_CONTATO = "tabela_contato";
     public static String CAMPOS_BD = "(id INTEGER PRIMARY KEY AUTOINCREMENT, tarefa TEXT NOT NULL, descricao TEXT, status TEXT); ";
+    public static String PUT_NOME_TAREFA = "nomeTarefa";
+    public static String PUT_DESCRICAO_TAREFA = "descricaoTarefa";
+    public static String PUT_STATUS_TAREFA = "statusTarefa";
 }
