@@ -9,4 +9,8 @@ public class Common {
     public static int FAZENDO_POSITION = 1;
     public static int FEITO_POSITION = 2;
     public static String INTENT_TAREFA_SELECIONADA = "intent tarefa selecionada";
+    public static int VERSION_BD = 1;
+    public static String NOME_BD = "bdcontato";
+    public static String TABELA_CONTATO = "tabela_contato";
+    public static String CAMPOS_BD = "(id INTEGER PRIMARY KEY AUTOINCREMENT, tarefa TEXT NOT NULL, descricao TEXT, status TEXT); ";
 }
