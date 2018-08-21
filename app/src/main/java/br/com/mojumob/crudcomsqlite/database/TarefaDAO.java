@@ -89,15 +89,19 @@ public class TarefaDAO {
         return listaTarefas;
     }
 
-    @NonNull
-    private ContentValues getContentValues(Tarefa tarefa) {
-        //Crianco o Content Values
-        ContentValues cv = new ContentValues();
-        cv.put(Common.PUT_NOME_TAREFA, tarefa.getNomeTarefa());
-        cv.put(Common.PUT_DESCRICAO_TAREFA, tarefa.getDescricaoTarefa());
-        cv.put(Common.PUT_STATUS_TAREFA, tarefa.getStatusTarefa());
-        return cv;
+    public boolean deletar(Tarefa tarefa){
+
+        String[] args = {tarefa.getId().toString()};
+
+        try{
+            escreve.delete(Common.TABELA_TAREFA, "id=?", args);
+        }catch (Exception e){
+            return false;
+        }
+
+        return true;
     }
+
 
 
 

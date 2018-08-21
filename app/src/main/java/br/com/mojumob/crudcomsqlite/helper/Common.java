@@ -2,6 +2,10 @@ package br.com.mojumob.crudcomsqlite.helper;
 
 public class Common {
 
+    public static String TITLE_ALERT_DIALOG_EXCLUIR = "Excluir";
+    public static String MSG_ALERT_DIALOG_EXCLUIR = "Tem certeza que deseja excluir";
+    public static String TOAST_EXCLUIDO_SUCESSO = "Tarefa excluida com sucesso";
+    public static String TOST_EXCLUIDO_ERRO = "Erro ao excluir a tarefa";
     public static String FEITO = "Feito";
     public static String A_FAZER = "A fazer";
     public static String FAZENDO = "Fazendo";
@@ -16,9 +20,9 @@ public class Common {
     public static String CAMPO_NOME_TAREFA = "tarefa";
     public static String CAMPO_DESCRICAO_TAREFA = "descricao";
     public static String CAMPO_STATUS_TAREFA = "status";
-    public static String PUT_NOME_TAREFA = "nomeTarefa";
-    public static String PUT_DESCRICAO_TAREFA = "descricaoTarefa";
-    public static String PUT_STATUS_TAREFA = "statusTarefa";
+    public static String PUT_NOME_TAREFA = "nome";
+    public static String PUT_DESCRICAO_TAREFA = "descricao";
+    public static String PUT_STATUS_TAREFA = "status";
     public static String QUERY_SQL_SELECT_ALL = "SELECT * FROM " + TABELA_TAREFA + " ;";
     public static String CAMPOS_BD = "(" + CAMPO_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
             CAMPO_NOME_TAREFA +" TEXT NOT NULL, "+ CAMPO_DESCRICAO_TAREFA +" TEXT, "+
