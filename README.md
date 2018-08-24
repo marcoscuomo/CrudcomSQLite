@@ -12,6 +12,4 @@ O aplicativo tem a função de oferecer ao usuário um controle de tarefas onde 
 - RecyclerView
 - SQLite
 
-<img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite1.png"/>
-<img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite2.png"/>
-<img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite3.png"/>
+<img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite1.png"/> <img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite2.png"/> <img src="http://www.mojumob.com.br/git/crudsqlite/crudsqlite3.png"/>
